@@ -14,7 +14,7 @@ public class TestLinkedList {
 		MyNode<Integer> myThirdNode = new MyNode<Integer>(70);
 		myFirstNode.setNext(mySecondNode);
 		mySecondNode.setNext(myThirdNode);
-		boolean res = myFirstNode.getNext().equals(mySecondNode) && mySecondNode.getNext().equals(myThirdNode);
-		Assert.assertTrue(res);
+		boolean result = myFirstNode.getNext().equals(mySecondNode) && mySecondNode.getNext().equals(myThirdNode);
+		Assert.assertTrue(result);
 	}
 }

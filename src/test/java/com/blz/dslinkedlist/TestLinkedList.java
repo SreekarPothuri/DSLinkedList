@@ -77,7 +77,7 @@ public class TestLinkedList {
 		boolean result = MyLinkedList.head.equals(mySecondNode) && MyLinkedList.tail.equals(myThirdNode);
 		Assert.assertTrue(result);
 	}
-	
+
 	@Test
 	public void given3NumbersWhenAddedtoLinkedListAndDeleteLastElement() {
 		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
@@ -92,7 +92,7 @@ public class TestLinkedList {
 		boolean result = MyLinkedList.head.equals(myFirstNode) && MyLinkedList.tail.equals(mySecondNode);
 		Assert.assertTrue(result);
 	}
-	
+
 	@Test
 	public void given3NumbersWhenAddedtoLinkedListAndSearchElement() {
 		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
@@ -104,11 +104,11 @@ public class TestLinkedList {
 		lst.append(myThirdNode);
 		lst.search(30);
 		lst.printMyNodes();
-		boolean result = MyLinkedList.head.equals(myFirstNode) && MyLinkedList.head.getNext().equals(mySecondNode) &&
-							MyLinkedList.tail.equals(myThirdNode);
+		boolean result = MyLinkedList.head.equals(myFirstNode) && MyLinkedList.head.getNext().equals(mySecondNode)
+				&& MyLinkedList.tail.equals(myThirdNode);
 		Assert.assertTrue(result);
 	}
-	
+
 	@Test
 	public void given3NumbersWhenAddedtoLinkedListToSearchAndInsertElement() {
 		MyNode<Integer> myFirstNode = new MyNode<Integer>(56);
@@ -119,11 +119,10 @@ public class TestLinkedList {
 		lst.add(myFirstNode);
 		lst.append(mySecondNode);
 		lst.append(myFourthNode);
-		lst.search(30);
-		lst.insert(mySecondNode, myThirdNode);
+		lst.searchAndInsertValue(30, myThirdNode);
 		lst.printMyNodes();
 		boolean result = MyLinkedList.head.equals(myFirstNode) && MyLinkedList.head.getNext().equals(mySecondNode)
-							&& MyLinkedList.head.getNext().getNext().equals(myThirdNode) && MyLinkedList.tail.equals(myFourthNode) ;
+				&& MyLinkedList.head.getNext().getNext().equals(myThirdNode) && MyLinkedList.tail.equals(myFourthNode);
 		Assert.assertTrue(result);
 	}
 }

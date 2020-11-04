@@ -77,4 +77,13 @@ public class MyLinkedList<K> {
 		}
 		return tempNode1;
 	}
+	
+	public void searchAndInsertValue(K key, INode newNode) {
+		INode tempNode = head;
+		while (!(tempNode.getKey() == key)) {
+			tempNode = tempNode.getNext();
+		}
+		search(key);
+		insert(tempNode, newNode);
+	}
 }

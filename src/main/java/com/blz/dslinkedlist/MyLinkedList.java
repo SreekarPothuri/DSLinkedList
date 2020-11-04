@@ -98,7 +98,7 @@ public class MyLinkedList<K> {
 			size++;
 		}
 		System.out.println(size+1);
-		return size;
+		return size+1;
 	}
 	
 	public INode searchAndDelete(K key) {

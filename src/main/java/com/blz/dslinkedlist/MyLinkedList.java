@@ -77,4 +77,45 @@ public class MyLinkedList<K> {
 		}
 		return tempNode1;
 	}
+	
+	public void searchAndInsertValue(K key, INode newNode) {
+		INode tempNode = head;
+		while (!(tempNode.getKey() == key)) {
+			tempNode = tempNode.getNext();
+		}
+		search(key);
+		insert(tempNode, newNode);
+	}
+	
+	public int size() {
+		int size = 0;
+		if(this.head == null) {
+			return size;
+		}
+		INode tempNode = this.head;
+		while(tempNode.getNext() != null) {
+			tempNode = tempNode.getNext();
+			size++;
+		}
+		System.out.println(size+1);
+		return size;
+	}
+	
+	public INode searchAndDelete(K key) {
+		INode firstNode = head;
+		INode tempNode = head;
+		while(!(tempNode.getKey() == key)) {
+			tempNode = tempNode.getNext();
+		}
+		this.head = tempNode;
+		pop();
+		INode LastNode = this.head;
+		this.head = firstNode;
+		INode tempNode1 = this.head;
+		while (tempNode1.getNext().getKey() != key) {
+			tempNode1 = tempNode1.getNext();
+		}
+		tempNode1.setNext(LastNode);
+		return this.head;
+	}
 }

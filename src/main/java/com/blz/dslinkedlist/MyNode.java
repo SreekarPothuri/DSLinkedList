@@ -1,6 +1,7 @@
 package com.blz.dslinkedlist;
 
-public class MyNode<K> implements INode<K> {
+public class MyNode<K extends Comparable<K>> implements INode<K> {
+
 	private K key;
 	private INode<K> next;
 
